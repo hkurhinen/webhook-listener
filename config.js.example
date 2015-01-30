@@ -1,0 +1,11 @@
+﻿var config = {
+  'port': 9007,
+  'repositories' : {
+    '** Name of your repository **': {
+      'secret': '** Your github webhook secret here **',
+      'script': '** Name of your update script **'
+    }
+  }
+};
+
+module.exports = config;
