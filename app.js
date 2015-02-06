@@ -31,11 +31,13 @@ http.createServer(function (req, res) {
             res.writeHead(403, { 'Content-Type': 'text/plain' });
             res.end('Invalid signature');
           } else {
-            console.log('Signature is valid');
-            exec(conf.script, function (err, stdout, stderr) {
-              if (err)
-                throw err;
-            });
+			if(post.ref === conf.ref){
+				console.log('Push to configured branch, starting deployment');
+				exec(conf.script, function (err, stdout, stderr) {
+				  if (err)
+					throw err;
+				});
+			}
             res.writeHead(200, { 'Content-Type': 'text/plain' });
             res.end('ok');
           }

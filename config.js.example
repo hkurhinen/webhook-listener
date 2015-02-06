@@ -3,7 +3,8 @@
   'repositories' : {
     '** Name of your repository **': {
       'secret': '** Your github webhook secret here **',
-      'script': '** Name of your update script **'
+      'script': '** Name of your update script **',
+      'ref': 'refs/heads/master'
     }
   }
 };
